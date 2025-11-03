@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yatzy — Single Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="board" id="board">
+      <div class="header">
+        <div>
+          <div class="title">YATZY <span class="subtitle-small">Single player</span></div>
+          <div class="subtitle">Roll dice, keep some, score categories — 13 rounds</div>
+        </div>
+        <div class="turn-info">
+          <div class="small">Turn <span id="turnNum">1</span> / 13</div>
+          <div class="small">Rolls used: <span id="rollCount">0</span> / 3</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="dice-row" id="diceRow" aria-label="Dice area"></div>
+
+        <div class="controls">
+          <button id="rollBtn">Roll Dice</button>
+          <button id="resetKept" class="secondary">Reset Keeps</button>
+          <button id="endTurn" class="secondary">Score & End Turn</button>
+          <button id="newGame" class="danger">New Game</button>
+        </div>
+
+        <div class="status" id="status">
+          Click dice to keep/unkeep. You may roll up to 3 times per turn.
+        </div>
+      </div>
+    </div>
+
+    <aside class="scorecard">
+      <div class="score-title">
+        <div><strong>Scorecard</strong></div>
+        <div class="small">Click a category to score current dice</div>
+      </div>
+
+      <div class="score-list" id="scoreList"></div>
+
+      <div class="totals">
+        <div><span>Upper total</span><span id="upperTotal">0</span></div>
+        <div><span>Upper bonus (≥63)</span><span id="upperBonus">0</span></div>
+        <div><span>Lower total</span><span id="lowerTotal">0</span></div>
+        <div class="final">
+          <span class="small">Final score</span><span class="final-score" id="finalScore">0</span>
+        </div>
+      </div>
+
+      <div id="gameMessage" class="game-message"></div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
